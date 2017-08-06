@@ -1,0 +1,121 @@
+.Grid{
+  display: flex;
+  flex-flow: row wrap;
+
+}
+.wrapper{
+  max-width: 1300px;
+  margin: 0 auto;
+  border: 1px solid red;
+}
+/* Grid row Properties */
+.Grid_left, .GL{
+
+}
+.Grid_center, .GC{
+  justify-content: center;
+}
+.Grid_right, .GR{
+  justify-content: flex-end;
+}
+/*Grid col properties */
+.Grid_top, .GT{
+  align-items: flex-start;
+}
+.Grid_middle{
+  align-items: flex-center;
+}
+.Grid_bottom{
+  align-items: flex-end;
+}
+/*Grid-full and Grid_gutters*/
+.Grid_full > .Grid-cell{
+  flex: 0 0 100%;
+}
+
+.Grid_gutters{
+  margin-left: -1em;
+}
+.Grid_gutters .Grid-cell{
+  padding-left: 1em;
+}
+.Grid-cell{
+  flex: 1;
+}
+
+.content{
+  padding: 0.8em 1em;
+  margin-bottom: 1em;
+  border: 1px solid #33cccc;
+  border-radius: 3px;
+}
+/*mobile first*/
+.Grid_cols-2 > .Grid-cell{
+  flex: 0 0 calc(100% - 1em);
+}
+.Grid_cols-3 > .Grid-cell{
+  flex: 0 0 calc(100% - 1em);
+}
+.Grid_cols-4 > .Grid-cell{
+  flex: 0 0 calc(100% - 1em);
+}
+.Grid_cols-6 > .Grid-cell{
+  flex: 0 0 calc(50% - 1em);
+}
+.Grid_cols-12 > .Grid-cell{
+  flex: 0 0 calc(33.3333% - 1em);
+}
+.Grid_1of2 > .Grid-cell,
+.Grid_1of4 > .Grid-cell:nth-of-type(1),
+.Grid_1of3 > .Grid-cell:nth-of-type(1),{
+  flex: 0 0 100%;
+}
+.Grid_1of6 > .Grid-cell:nth-of-type(1){
+  flex: 0 0 50%;
+}
+/* for Tablet Screens */
+@media all and (min-width: 30em){
+
+  .Grid_cols-4 > .Grid-cell{
+    flex: 0 0 calc(50% - 1em);
+  }
+  .Grid_cols-6 > .Grid-cell{
+    flex: 0 0 calc(33.3333% - 1em);
+  }
+  .Grid_cols-12 > .Grid-cell{
+    flex: 0 0 calc(16.6666% - 1em);
+  }
+  .Grid_1of3 > .Grid-cell:nth-of-type(1){
+    flex: 0 0 calc(100% - 1em);
+  }
+  .Grid_1of4 > .Grid-cell:nth-of-type(1){
+    flex: 0 0 calc(50% - 1em);
+  }
+  .Grid_1of6 > .Grid-cell:nth-of-type(1){
+    flex: 0 0 calc(33.3333% - 1em);
+  }
+
+}
+/* for larger screens */
+@media all and (min-width: 48em){
+  
+  .Grid_cols-2 > .Grid-cell,
+  .Grid_cols-3 > .Grid-cell,
+  .Grid_cols-4 > .Grid-cell,
+  .Grid_cols-6 > .Grid-cell,
+  .Grid_cols-12 > .Grid-cell{
+    flex: 1;
+  }
+  .Grid_1of2 > .Grid-cell:nth-of-type(1){
+    flex: 0 0 calc(50% - 1em);
+  }
+  .Grid_1of3 > .Grid-cell:nth-of-type(1){
+    flex: 0 0 calc(33.3333% - 1em);
+  }
+  .Grid_1of4 > .Grid-cell:nth-of-type(1){
+    flex: 0 0 calc(25% - 1em);
+  }
+  .Grid_1of6 > .Grid-cell:nth-of-type(1){
+    flex: 0 0 calc(16.6666% - 1em);
+  }
+}

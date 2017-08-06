@@ -1,0 +1,119 @@
+.headerWrapper{
+  width: 100%;
+  background: #455A64;
+  color: white;
+}
+hr{
+  border: none;
+  height: 1px;
+   background-color: rgba(51, 153, 204, 0.2);
+  margin-bottom: 1em;
+}
+.header{
+  position: relative;
+}
+
+/*navigation*/
+.headerLogo{
+  display: none;
+}
+.navigation{
+  background: #455A64;
+  margin: 0;
+  margin-left: 1em;
+  padding: 1em;
+  flex: 1;
+  list-style: none;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-end;
+  width: calc(100% - 2em);
+  position: absolute;
+  top: 100%;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  z-index: -1;
+  transform: translateY(-2em);
+  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+}
+.navigation.responsiveNav{
+  visibility: visible;
+  transform: translateY(0);
+  opacity: 1;
+  z-index: 1;
+  transition-delay: 0s, 0s, 0.3s;
+}
+.navigation li{
+  flex: 1;
+  padding: 0;
+
+}
+a.icon{
+  position: absolute;
+  top: 0;
+  right: 1em;
+  color: inherit;
+  text-decoration: none;
+  padding: 0.8em 1em;
+
+}
+a.icon:hover{
+  background-color: #ddd;
+   color: black;
+}
+.navigation a{
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  padding: 1em;
+  border-top: 1px solid #ccc;
+}
+
+.navigation a:hover{
+  background-color: #ddd;
+  color: black;
+  border-radius: 7px;
+}
+.navigation li a.frst{
+  border: none;;
+}
+
+
+/* for larger screens */
+@media all and (min-width: 48em){
+
+  /*navigation*/
+  .headerLogo{
+    display: inline-block;
+
+  }
+  .header a.icon{
+    display: none;
+  }
+  .navigation{
+    margin: 0;
+    text-align: center;
+    right: 0;
+    flex: 0 0 calc(50% - 2em);
+    flex-flow: row wrap;
+    align-items: center;
+    position: relative;
+    width: auto;
+    visibility: visible;
+    opacity: 1;
+    z-index: 0;
+    transform: translateY(0);
+  }
+  .navigation li{
+    border: none;
+    flex: 1;
+    margin: 0;
+    align-items: flex-center;
+    height: 3em;
+  }
+  .navigation li a{
+    border: none;
+  }
+
+}
