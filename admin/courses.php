@@ -1,7 +1,26 @@
-<?php include "../includes/header.php" ?>
+<?php include '../includes/header.php'; ?>
+<?php
+  if(!isset($_SESSION['USERNAME'])){
+    header("Location: ./index.php");
+  }
+?>
 <div class="firstViewWrapper" >
   <div class="wrapper firstView">
-    <h1 class="TC">Courses</h1>
+    <form action="newcourse.php" method="get" >
+    <div class="Grid Grid_gutters Grid_3of1">
+      <div class="Grid-cell">
+        <div class="content">
+          <input type="text" name="cname" placeholder="Enter New Course Name" style="width: 100%;">
+        </div>
+      </div>
+      <div class="Grid-cell">
+        <div class="content">
+          <button name="newcourse" type="submit">New Course</button>
+        </div>
+      </div>
+    </div>
+    </form>
+    <h1 class="TC">Existing Courses</h1>
     <hr />
     <div class="Grid Grid_full">
       <div class="Grid-cell">
@@ -18,15 +37,16 @@
                 $sem_year = $row['SEM_YEAR'];
                 $mentor = $row['MENTOR'];
                 $img_src = "data:image/jpeg;base64,".base64_encode($row['IMG']);
-                echo "<div class=\"Grid Grid_gutters Grid_1of2 Grid_middle\"><div class=\"Grid-cell\"><div class=\"content GridC GC GS\">";
+                echo "<div class=\"Grid Grid_gutters Grid_1of3 Grid_middle\"><div class=\"Grid-cell\"><div class=\"content GridC GC GS\">";
                echo "<img class=\"crs-img\" src=\"".$img_src."\">";
                 echo "</div></div><div class=\"Grid-cell\"><div class=\"content TC\">";
                 echo "<h2>".$cname."</h2>";
                 echo "<strong><p>".$cdesc."</strong></p>";
                 echo "<strong><p>".$sem_year."</strong></p>";
                 echo "<p>".$mentor."</p>";
-                echo "<a href=\"course.php?id=".$row['ID']."\">Learn More</a>";
-
+                echo "<a href=\"../courses/course.php?id=".$row['ID']."\">Learn More</a>";
+                echo "  |  ";
+                echo "<a href=\"newcourse.php?id=".$row['ID']."\">Edit</a>";
                 echo "</div>
               </div>
             </div>
@@ -58,4 +78,4 @@
     </div>
   </div>
 </div>
-<?php include "../includes/footer.php" ?>
+<?php include '../includes/footer.php'; ?>

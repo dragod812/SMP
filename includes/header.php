@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html >
 <head>
@@ -6,6 +7,7 @@
       <link rel="stylesheet" href="../css/style.css">
       <link rel="stylesheet" href="../css/header.css">
       <link rel="stylesheet" href="../css/grid.css">
+      <link rel="stylesheet" href="../css/component.css">
       <style>
         .zero-bottom-margin{
           margin-bottom: 0; !important;
@@ -30,7 +32,14 @@
         <li><a href="#">Gallery</a></li>
         <li><a href="#">Courses</a></li>
         <li><a href="#">Team</a></li>
-        <li><a href="#">Register</a></li>
+        <?php
+          if(isset($_SESSION['USERNAME'])){
+            echo "<li><a href=\"../includes/logout.php\">Logout</a></li>";
+          }
+          else{
+            echo "<li><a href=\"#\">Register</a></li>";
+          }
+        ?>
 
       </ul>
 

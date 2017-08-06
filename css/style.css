@@ -1,4 +1,7 @@
-
+@font-face {
+  font-family: Edelsans;
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/edelsans_regular-webfont.woff);
+}
 /*text align*/
 .TC{
   text-align: center;
@@ -13,8 +16,11 @@ h1, h2{
 }
 /*crs-img*/
 .crs-img{
-  height: 300px;
-  margin: 0 auto;
+  width: 100%;
+  object-fit: contain;
+}
+.error{
+  
 }
 /*footer*/
 .footerWrapper{

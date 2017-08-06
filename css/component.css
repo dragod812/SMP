@@ -1,0 +1,22 @@
+input{
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #eee;
+      margin-bottom: 1em;
+      width: calc(100% - 2em);
+    }
+    textarea{
+          padding: 10px;
+          border-radius: 5px;
+          border: 1px solid #eee;
+          margin-bottom: 1em;
+          width: calc(100% - 2em);
+          resize: vertical;
+        }
+button{
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #eee;
+  margin-bottom: 1em;
+  width:100%;
+}
