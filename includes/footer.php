@@ -31,7 +31,7 @@ Want to do a project or have any queries? Feel free to get in touch with us. We'
         </div>
       </div>
     </div>
-    <div class="Grid Grid_gutters Grid_1of2" >
+    <div class="Grid Grid_gutters Grid_1of3" >
       <div class="Grid-cell">
         <div class="content zero-bottom-margin"> Copyright &copy; Student Mentorship Programme</div>
       </div>
@@ -45,6 +45,6 @@ Want to do a project or have any queries? Feel free to get in touch with us. We'
   <script src='https://use.fontawesome.com/35e726d5f7.js'></script>
 
     <script src="../js/index.js"></script>
-
+    <script src="../js/upload.js"></script>
 </body>
 </html>
